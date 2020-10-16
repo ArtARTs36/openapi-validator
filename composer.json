@@ -1,0 +1,26 @@
+{
+    "name": "artarts36/openapi-validator",
+    "description": "OA Validator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ArtARTs36",
+            "email": "temicska99@mail.ru"
+        }
+    ],
+    "require": {
+        "symfony/console": ">= 4",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArtARTs36\\OpenApiValidator\\": "src/"
+        }
+    },
+    "scripts": {
+        "lint": [
+            "./vendor/bin/phpcs --standard=PSR2 src/"
+        ]
+    }
+}
