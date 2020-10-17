@@ -43,14 +43,14 @@ class ValidOpenApiCommand extends Command
         $info = (new Validator(DriverFactory::instance($driver)))->valid($this->path($file));
 
         if ($info->isValid($errorsMax, $warningsMax)) {
-            return static::SUCCESS;
+            return 0;
         }
 
         foreach ($info->errors() as $error) {
             $this->error($output, $error);
         }
 
-        return static::FAILURE;
+        return 1;
     }
 
     protected function path(string $path): string
